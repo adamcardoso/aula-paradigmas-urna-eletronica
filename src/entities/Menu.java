@@ -3,8 +3,8 @@ package entities;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Menu {
-    Scanner input = new Scanner(System.in);
+public final class Menu {
+    private final Scanner input = new Scanner(System.in);
 
     ResultadoEleicao resultadoEleicao = new ResultadoEleicao();
 

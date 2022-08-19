@@ -43,6 +43,7 @@ public class ResultadoEleicao {
         return totalVotosEmBranco = (double) candidato.getVotosEmBranco() / 100;
     }
 
+    //falta fazer a comparaçao de quem é maior que quem e colocar em ordem crescente
     public void mostraResultadoDaEleicao(){
         int maiorVotacao = candidato.getVotos1();
 
@@ -56,7 +57,7 @@ public class ResultadoEleicao {
             maiorVotacao = candidato.getVotos4();
         }
 
-        
+
         System.out.println("\nCandidato vencedor das eleições: ");
         if (candidato.getVotos1() == maiorVotacao) {
             System.out.println(candidato.getCandidato1());

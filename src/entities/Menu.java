@@ -6,11 +6,10 @@ import java.util.Scanner;
 public class Menu {
     Scanner input = new Scanner(System.in);
 
-    Candidato candidato = new Candidato();
-    double totalVotosEmBranco;
+    ResultadoEleicao resultadoEleicao = new ResultadoEleicao();
+
     public void menu() {
         int op = 0;
-
 
         do {
             try {
@@ -31,29 +30,24 @@ public class Menu {
 
                 switch (op) {
                     case 1:
-                        candidato.setVotos1(candidato.getVotos1() + 1);
-                        candidato.setTotalVotos(candidato.getTotalVotos() + 1);
+                        resultadoEleicao.calculoVotacaoCandidatoUm();
                         break;
 
                     case 2:
-                        candidato.setVotos2(candidato.getVotos2() + 1);
-                        candidato.setTotalVotos(candidato.getTotalVotos() + 1);
+                        resultadoEleicao.calculoVotacaoCandidatoDois();
                         break;
                     case 3:
-                        candidato.setVotos3(candidato.getVotos3() + 1);
-                        candidato.setTotalVotos(candidato.getTotalVotos() + 1);
+                        resultadoEleicao.calculoVotacaoCandidatoTres();
                         break;
                     case 4:
-                        candidato.setVotos4(candidato.getVotos4() + 1);
-                        candidato.setTotalVotos(candidato.getTotalVotos() + 1);
+                        resultadoEleicao.calculoVotacaoCandidatoQuatro();
                         break;
 
                     case 5:
-                        candidato.setVotosNulo(candidato.getVotosNulo() + 1);
+                        resultadoEleicao.calculaTotalDeVotosNulos();
                         break;
                     case 6:
-                        candidato.setVotosEmBranco(candidato.getVotosEmBranco() + 1);
-                        totalVotosEmBranco = (double) candidato.getVotosEmBranco() / 100;
+                        resultadoEleicao.calculaPorcentagemDeVotosEmBranco();
                         break;
                     case 7:
                         System.out.println("Sistema encerrado!");
@@ -68,31 +62,7 @@ public class Menu {
             input.nextLine();
         }while (op != 7);
 
-        int maiorVotacao = candidato.getVotos1();
-
-        if (candidato.getVotos2() > maiorVotacao){
-            maiorVotacao = candidato.getVotos2();
-        }
-        if (candidato.getVotos3() > maiorVotacao){
-            maiorVotacao = candidato.getVotos3();
-        }
-        if (candidato.getVotos4() > maiorVotacao){
-            maiorVotacao = candidato.getVotos4();
-        }
-        System.out.println("\nCandidato vencedor das eleições: ");
-        if (candidato.getVotos1() == maiorVotacao)
-            System.out.println(candidato.getCandidato1());
-        if (candidato.getVotos2() == maiorVotacao)
-            System.out.println(candidato.getCandidato2());
-        if (candidato.getVotos3() == maiorVotacao)
-            System.out.println(candidato.getCandidato3());
-        if (candidato.getVotos4() == maiorVotacao)
-            System.out.println(candidato.getCandidato4());
-
-
-        System.out.println("\nTotal de votos nulos: "+candidato.getVotosNulo());
-        System.out.println("Total de votos em branco: "+candidato.getVotosEmBranco());
-        System.out.println("Porcentagem de votos em branco: "+totalVotosEmBranco+" %");
+        resultadoEleicao.mostraResultadoDaEleicao();
 
         input.close();
 

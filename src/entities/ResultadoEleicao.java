@@ -42,10 +42,17 @@ public class ResultadoEleicao {
 
     // tem que arrumar esse cálculo, tá errado
     public double calculaPorcentagemDeVotosEmBranco(){
-        int totalDeVotos = 0;
-        candidato.setVotosEmBranco(totalVotosEmBranco + 1);
-        totalVotosEmBranco = candidato.getVotosEmBranco();
-        return totalDeVotos = candidato.getVotosEmBranco() / totalVotosEmBranco;
+        //Porcentagem = (valor obtido x 100) / Valor total
+        int votosEmBrancoDoEleitor = 0;
+
+        try{
+            candidato.setVotosEmBranco(candidato.getVotosEmBranco() + 1);
+            votosEmBrancoDoEleitor = candidato.getVotosEmBranco();
+        }catch (ArithmeticException e){
+            System.out.println("Erro ao executar o código!");
+        }
+
+        return totalVotosEmBranco = (candidato.getVotosEmBranco() / votosEmBrancoDoEleitor) * 100;
     }
 
     public void mostraResultadoDaEleicao(){

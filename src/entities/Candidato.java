@@ -2,10 +2,7 @@ package entities;
 
 
 public class Candidato {
-    private int votosNulo = 0, totalVotosNulos;
-    private int votosEmBranco = 0;
-    private int totalVotos = 0;
-    private int votos1 = 0, votos2 = 0, votos3 = 0, votos4 = 0;
+    private int votosNulo = 0, totalVotosNulos, votosEmBranco = 0, totalVotos = 0, votos1 = 0, votos2 = 0, votos3 = 0, votos4 = 0;
 
     private String candidato1 = "Ada", candidato2 = "Einstein", candidato3 = "Jobs", candidato4 = "Turing";
 

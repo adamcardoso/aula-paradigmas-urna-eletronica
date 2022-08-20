@@ -5,12 +5,12 @@ import java.util.Arrays;
 public class ResultadoEleicao {
     Candidato candidato = new Candidato();
 
-    private double totalVotosEmBranco = 0.0;
+    private int totalVotosEmBranco = 0;
 
     public ResultadoEleicao() {
     }
 
-    public ResultadoEleicao(double totalVotosEmBranco) {
+    public ResultadoEleicao(int totalVotosEmBranco) {
         this.totalVotosEmBranco = totalVotosEmBranco;
     }
 
@@ -40,9 +40,12 @@ public class ResultadoEleicao {
         candidato.setVotosNulo(candidato.getVotosNulo() + 1);
     }
 
+    // tem que arrumar esse cálculo, tá errado
     public double calculaPorcentagemDeVotosEmBranco(){
-        candidato.setVotosEmBranco(candidato.getVotosEmBranco() + 1);
-        return totalVotosEmBranco = (double) candidato.getVotosEmBranco() / 100;
+        int totalDeVotos = 0;
+        candidato.setVotosEmBranco(totalVotosEmBranco + 1);
+        totalVotosEmBranco = candidato.getVotosEmBranco();
+        return totalDeVotos = candidato.getVotosEmBranco() / totalVotosEmBranco;
     }
 
     public void mostraResultadoDaEleicao(){
@@ -210,7 +213,7 @@ public class ResultadoEleicao {
         return totalVotosEmBranco;
     }
 
-    public void setTotalVotosEmBranco(double totalVotosEmBranco) {
+    public void setTotalVotosEmBranco(int totalVotosEmBranco) {
         this.totalVotosEmBranco = totalVotosEmBranco;
     }
 }

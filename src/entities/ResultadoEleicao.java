@@ -60,11 +60,7 @@ public class ResultadoEleicao {
 
         if (candidato.getVotos1() == candidato.getVotos2() && candidato.getVotos1() == candidato.getVotos3()
                 && candidato.getVotos1() == candidato.getVotos4()){
-            System.out.println("\n\nCANDIDATOS EMPATADOS!");
-            System.out.println("Candidato: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-            System.out.println("Candidato: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-            System.out.println("Candidato: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-            System.out.println("Candidato: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
+            mensagemCandidatosEmpatados();
         }else {
             System.out.println("\nCandidato vencedor das eleições: ");
             if (candidato.getVotos1() == maiorVotacao) {
@@ -73,33 +69,15 @@ public class ResultadoEleicao {
                 if (candidato.getVotos2() >= candidato.getVotos3() && candidato.getVotos2() >= candidato.getVotos4()){
                     System.out.println("Segundo colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
 
-                    if (candidato.getVotos3() >= candidato.getVotos4()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
-                    } else if (candidato.getVotos3() <= candidato.getVotos4()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-                    }
+                    comparacaoEntreVotosTresEQuatro();
                 }else if(candidato.getVotos3() >= candidato.getVotos2() && candidato.getVotos3() >= candidato.getVotos4()){
                     System.out.println("Segundo colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
 
-                    if (candidato.getVotos2() >= candidato.getVotos4()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
-                    } else if (candidato.getVotos2() <= candidato.getVotos4()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-                    }
+                    comparacaoEntreVotosDoisEQuatro();
                 }else if(candidato.getVotos4() >= candidato.getVotos2() && candidato.getVotos4() >= candidato.getVotos3()){
                     System.out.println("Segundo colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
 
-                    if (candidato.getVotos2() >= candidato.getVotos3()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-                    } else if (candidato.getVotos2() <= candidato.getVotos3()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-                    }
+                    comparacaoEntreVotosDoisETres();
                 }
             }
             if (candidato.getVotos2() == maiorVotacao) {
@@ -108,33 +86,15 @@ public class ResultadoEleicao {
                 if (candidato.getVotos1() >= candidato.getVotos3() && candidato.getVotos1() >= candidato.getVotos4()){
                     System.out.println("Segundo colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
 
-                    if (candidato.getVotos3() >= candidato.getVotos4()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
-                    } else if (candidato.getVotos3() <= candidato.getVotos4()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-                    }
+                    comparacaoEntreVotosTresEQuatro();
                 }else if(candidato.getVotos3() >= candidato.getVotos1() && candidato.getVotos3() >= candidato.getVotos4()){
                     System.out.println("Segundo colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
 
-                    if (candidato.getVotos1() >= candidato.getVotos4()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
-                    } else if (candidato.getVotos1() <= candidato.getVotos4()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-                    }
+                    comparacaoEntreVotosUmEQuatro();
                 }else if(candidato.getVotos4() >= candidato.getVotos1() && candidato.getVotos4() >= candidato.getVotos3()){
                     System.out.println("Segundo colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
 
-                    if (candidato.getVotos1() >= candidato.getVotos3()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-                    } else if (candidato.getVotos1() <= candidato.getVotos3()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-                    }
+                    comparacaoEntreVotosUmETres();
                 }
             }
             if (candidato.getVotos3() == maiorVotacao) {
@@ -143,33 +103,15 @@ public class ResultadoEleicao {
                 if (candidato.getVotos1() >= candidato.getVotos2() && candidato.getVotos1() >= candidato.getVotos4()){
                     System.out.println("Segundo colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
 
-                    if (candidato.getVotos2() >= candidato.getVotos4()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
-                    } else if (candidato.getVotos2() <= candidato.getVotos4()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-                    }
+                    comparacaoEntreVotosDoisEQuatro();
                 }else if(candidato.getVotos2() >= candidato.getVotos1() && candidato.getVotos2() >= candidato.getVotos4()){
                     System.out.println("Segundo colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
 
-                    if (candidato.getVotos1() >= candidato.getVotos4()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
-                    } else if (candidato.getVotos1() <= candidato.getVotos4()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-                    }
+                    comparacaoEntreVotosUmEQuatro();
                 }else if(candidato.getVotos4() >= candidato.getVotos1() && candidato.getVotos4() >= candidato.getVotos2()){
                     System.out.println("Segundo colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
 
-                    if (candidato.getVotos1() >= candidato.getVotos2()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-                    } else if (candidato.getVotos1() <= candidato.getVotos2()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-                    }
+                    comparacaoEntreVotosUmEDois();
                 }
             }
             if (candidato.getVotos4() == maiorVotacao) {
@@ -178,33 +120,15 @@ public class ResultadoEleicao {
                 if (candidato.getVotos1() >= candidato.getVotos2() && candidato.getVotos1() >= candidato.getVotos3()){
                     System.out.println("Segundo colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
 
-                    if (candidato.getVotos2() >= candidato.getVotos3()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-                    } else if (candidato.getVotos2() <= candidato.getVotos3()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-                    }
+                    comparacaoEntreVotosDoisETres();
                 }else if(candidato.getVotos2() >= candidato.getVotos1() && candidato.getVotos2() >= candidato.getVotos3()){
                     System.out.println("Segundo colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
 
-                    if (candidato.getVotos1() >= candidato.getVotos3()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-                    } else if (candidato.getVotos1() <= candidato.getVotos3()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-                    }
+                    comparacaoEntreVotosUmETres();
                 }else if(candidato.getVotos3() >= candidato.getVotos1() && candidato.getVotos3() >= candidato.getVotos2()){
                     System.out.println("Segundo colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
 
-                    if (candidato.getVotos1() >= candidato.getVotos2()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-                    } else if (candidato.getVotos1() <= candidato.getVotos2()){
-                        System.out.println("Terceiro colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
-                        System.out.println("Quarto colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
-                    }
+                    comparacaoEntreVotosUmEDois();
                 }
             }
         }
@@ -212,6 +136,74 @@ public class ResultadoEleicao {
         System.out.println("\nTotal de votos nulos: "+candidato.getVotosNulo());
         System.out.println("Total de votos em branco: "+candidato.getVotosEmBranco());
         System.out.println("Porcentagem de votos em branco: "+totalVotosEmBranco+" %");
+    }
+
+    private void mensagemCandidatosEmpatados() {
+        System.out.println("\n\nCANDIDATOS EMPATADOS!");
+        System.out.println("Candidato: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
+        System.out.println("Candidato: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
+        System.out.println("Candidato: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
+        System.out.println("Candidato: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
+    }
+
+    private void comparacaoEntreVotosUmEDois() {
+        if (candidato.getVotos1() >= candidato.getVotos2()){
+            System.out.println("Terceiro colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
+            System.out.println("Quarto colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
+        } else if (candidato.getVotos1() <= candidato.getVotos2()){
+            System.out.println("Terceiro colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
+            System.out.println("Quarto colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
+        }
+    }
+
+    private void comparacaoEntreVotosUmETres() {
+        if (candidato.getVotos1() >= candidato.getVotos3()){
+            System.out.println("Terceiro colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
+            System.out.println("Quarto colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
+        } else if (candidato.getVotos1() <= candidato.getVotos3()){
+            System.out.println("Terceiro colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
+            System.out.println("Quarto colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
+        }
+    }
+
+    private void comparacaoEntreVotosUmEQuatro() {
+        if (candidato.getVotos1() >= candidato.getVotos4()){
+            System.out.println("Terceiro colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
+            System.out.println("Quarto colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
+        } else if (candidato.getVotos1() <= candidato.getVotos4()){
+            System.out.println("Terceiro colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
+            System.out.println("Quarto colocado: " +candidato.getCandidato1()+", com "+candidato.getVotos1()+" votos!");
+        }
+    }
+
+    private void comparacaoEntreVotosDoisETres() {
+        if (candidato.getVotos2() >= candidato.getVotos3()){
+            System.out.println("Terceiro colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
+            System.out.println("Quarto colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
+        } else if (candidato.getVotos2() <= candidato.getVotos3()){
+            System.out.println("Terceiro colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
+            System.out.println("Quarto colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
+        }
+    }
+
+    private void comparacaoEntreVotosDoisEQuatro() {
+        if (candidato.getVotos2() >= candidato.getVotos4()){
+            System.out.println("Terceiro colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
+            System.out.println("Quarto colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
+        } else if (candidato.getVotos2() <= candidato.getVotos4()){
+            System.out.println("Terceiro colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
+            System.out.println("Quarto colocado: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
+        }
+    }
+
+    private void comparacaoEntreVotosTresEQuatro() {
+        if (candidato.getVotos3() >= candidato.getVotos4()){
+            System.out.println("Terceiro colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
+            System.out.println("Quarto colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
+        } else if (candidato.getVotos3() <= candidato.getVotos4()){
+            System.out.println("Terceiro colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
+            System.out.println("Quarto colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
+        }
     }
 
     public double getTotalVotosEmBranco() {

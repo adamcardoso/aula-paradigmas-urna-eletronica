@@ -39,8 +39,7 @@ public class ResultadoEleicao {
     public void calculaTotalDeVotosNulos(){
         candidato.setVotosNulo(candidato.getVotosNulo() + 1);
     }
-
-    // tem que arrumar esse cálculo, tá errado
+    // arrumar essa parte para puxar do total de votos, quantos foram nulos
     public double calculaPorcentagemDeVotosEmBranco(){
         //Porcentagem = (valor obtido x 100) / Valor total
         int votosEmBrancoDoEleitor = 0;
@@ -52,7 +51,7 @@ public class ResultadoEleicao {
             System.out.println("Erro ao executar o código!");
         }
 
-        return totalVotosEmBranco = (candidato.getVotosEmBranco() / votosEmBrancoDoEleitor) * 100;
+        return totalVotosEmBranco = (candidato.getVotosEmBranco() * 100 ) / votosEmBrancoDoEleitor;
     }
 
     public void mostraResultadoDaEleicao(){

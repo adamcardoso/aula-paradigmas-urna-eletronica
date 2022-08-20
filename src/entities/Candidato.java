@@ -1,19 +1,18 @@
 package entities;
 
-import java.util.ArrayList;
 
 public class Candidato {
     private int votosNulo = 0, totalVotosNulos;
     private int votosEmBranco = 0;
     private int totalVotos = 0;
-    private int votos1 = 0, votos2 = 0, votos3 = 0, votos4 = 0, votos5 = 0;
+    private int votos1 = 0, votos2 = 0, votos3 = 0, votos4 = 0;
 
     private String candidato1 = "Ada", candidato2 = "Einstein", candidato3 = "Jobs", candidato4 = "Turing";
 
     public Candidato() {
     }
 
-    public Candidato(int votosNulo, int totalVotosNulos, int votosEmBranco, int totalVotos, int votos1, int votos2, int votos3, int votos4, int votos5, String candidato1, String candidato2, String candidato3, String candidato4) {
+    public Candidato(int votosNulo, int totalVotosNulos, int votosEmBranco, int totalVotos, int votos1, int votos2, int votos3, int votos4, String candidato1, String candidato2, String candidato3, String candidato4) {
         this.votosNulo = votosNulo;
         this.totalVotosNulos = totalVotosNulos;
         this.votosEmBranco = votosEmBranco;
@@ -22,7 +21,6 @@ public class Candidato {
         this.votos2 = votos2;
         this.votos3 = votos3;
         this.votos4 = votos4;
-        this.votos5 = votos5;
         this.candidato1 = candidato1;
         this.candidato2 = candidato2;
         this.candidato3 = candidato3;
@@ -84,14 +82,6 @@ public class Candidato {
 
     public void setVotos4(int votos4) {
         this.votos4 = votos4;
-    }
-
-    public int getVotos5() {
-        return votos5;
-    }
-
-    public void setVotos5(int votos5) {
-        this.votos5 = votos5;
     }
 
     public int getTotalVotosNulos() {

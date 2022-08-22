@@ -3,7 +3,7 @@ package entities;
 public class ResultadoEleicao {
     Candidato candidato = new Candidato();
 
-    private double totalVotosEmBranco = 0;
+    private double totalVotosEmBranco;
 
     public ResultadoEleicao() {
     }

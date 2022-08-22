@@ -47,7 +47,7 @@ public final class Menu {
                         resultadoEleicao.calculaTotalDeVotosNulos();
                         break;
                     case 6:
-                        resultadoEleicao.calculaPorcentagemDeVotosEmBranco();
+                        resultadoEleicao.calculaTotalDeVotosEmBranco();
                         break;
                     case 7:
                         System.out.println("Sistema encerrado!");

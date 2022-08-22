@@ -3,13 +3,7 @@ package entities;
 public class ResultadoEleicao {
     Candidato candidato = new Candidato();
 
-    private double totalVotosEmBranco;
-
     public ResultadoEleicao() {
-    }
-
-    public ResultadoEleicao(int totalVotosEmBranco) {
-        this.totalVotosEmBranco = totalVotosEmBranco;
     }
 
     public void calculoVotacaoCandidatoUm(){
@@ -36,25 +30,25 @@ public class ResultadoEleicao {
         candidato.setVotosNulo(candidato.getVotosNulo() + 1);
     }
 
+    public void calculaTotalDeVotosEmBranco(){
+        candidato.setVotosEmBranco(candidato.getVotosEmBranco() + 1);
+    }
+
     //adicionar os votos nulos ao calculo
-    public double calculaTotalDeVotos(){
-        return candidato.getVotos1() + candidato.getVotos2()+candidato.getVotos3() + candidato.getVotos4()
-                + candidato.getTotalVotosNulos() + candidato.getVotosEmBranco();
+    public int calculaTotalDeVotos(){
+        int votosTotais = candidato.getVotos1() + candidato.getVotos2()+candidato.getVotos3() + candidato.getVotos4()
+                + candidato.getVotosNulo() + candidato.getVotosEmBranco();
+
+        return votosTotais;
     }
 
     // arrumar essa parte para puxar do total de votos, quantos foram nulos
     public double calculaPorcentagemDeVotosEmBranco(){
         //Porcentagem = (valor obtido x 100) / Valor total
-        int votosEmBrancoDoEleitor = 0;
+        int votosEmBrancoDoEleitor = candidato.getVotosEmBranco();
 
-        try{
-            votosEmBrancoDoEleitor = candidato.setVotosEmBranco(candidato.getVotosEmBranco());
-            //votosEmBrancoDoEleitor = candidato.getVotosEmBranco();
-        }catch (ArithmeticException e){
-            System.out.println("Erro ao executar o código!");
-        }
 
-        return totalVotosEmBranco = (votosEmBrancoDoEleitor * 100) / calculaTotalDeVotos();
+        return ((double) (votosEmBrancoDoEleitor * 100) / calculaTotalDeVotos());
     }
 
     public void mostraResultadoDaEleicao(){
@@ -147,7 +141,7 @@ public class ResultadoEleicao {
 
         System.out.println("\nTotal de votos nulos: "+candidato.getVotosNulo());
         System.out.println("Total de votos em branco: "+candidato.getVotosEmBranco());
-        System.out.println("Porcentagem de votos em branco: "+totalVotosEmBranco+" %");
+        System.out.println("Porcentagem de votos em branco: "+calculaPorcentagemDeVotosEmBranco()+" %");
     }
 
     private void mensagemCandidatosEmpatados() {
@@ -216,13 +210,5 @@ public class ResultadoEleicao {
             System.out.println("Terceiro colocado: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
             System.out.println("Quarto colocado: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
         }
-    }
-
-    public double getTotalVotosEmBranco() {
-        return totalVotosEmBranco;
-    }
-
-    public void setTotalVotosEmBranco(double totalVotosEmBranco) {
-        this.totalVotosEmBranco = totalVotosEmBranco;
     }
 }

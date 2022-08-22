@@ -36,8 +36,8 @@ public class Candidato {
         return votosEmBranco;
     }
 
-    public void setVotosEmBranco(int votosEmBranco) {
-        this.votosEmBranco = votosEmBranco;
+    public int setVotosEmBranco(int votosEmBranco) {
+        return this.votosEmBranco = votosEmBranco + 1;
     }
 
     public int getTotalVotos() {

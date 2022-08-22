@@ -1,11 +1,9 @@
 package entities;
 
-import java.util.Arrays;
-
 public class ResultadoEleicao {
     Candidato candidato = new Candidato();
 
-    private int totalVotosEmBranco = 0;
+    private double totalVotosEmBranco = 0;
 
     public ResultadoEleicao() {
     }
@@ -39,9 +37,9 @@ public class ResultadoEleicao {
     }
 
     //adicionar os votos nulos ao calculo
-    public int calculaTotalDeVotos(){
-
-        return candidato.getVotos1() + candidato.getVotos2()+candidato.getVotos3() + candidato.getVotos4();
+    public double calculaTotalDeVotos(){
+        return candidato.getVotos1() + candidato.getVotos2()+candidato.getVotos3() + candidato.getVotos4()
+                + candidato.getTotalVotosNulos() + candidato.getVotosEmBranco();
     }
 
     // arrumar essa parte para puxar do total de votos, quantos foram nulos
@@ -50,13 +48,13 @@ public class ResultadoEleicao {
         int votosEmBrancoDoEleitor = 0;
 
         try{
-            candidato.setVotosEmBranco(candidato.getVotosEmBranco() + 1);
-            votosEmBrancoDoEleitor = candidato.getVotosEmBranco();
+            votosEmBrancoDoEleitor = candidato.setVotosEmBranco(candidato.getVotosEmBranco());
+            //votosEmBrancoDoEleitor = candidato.getVotosEmBranco();
         }catch (ArithmeticException e){
             System.out.println("Erro ao executar o código!");
         }
 
-        return totalVotosEmBranco = (candidato.getVotosEmBranco() * 100 ) / calculaTotalDeVotos();
+        return totalVotosEmBranco = (votosEmBrancoDoEleitor * 100) / calculaTotalDeVotos();
     }
 
     public void mostraResultadoDaEleicao(){
@@ -224,7 +222,7 @@ public class ResultadoEleicao {
         return totalVotosEmBranco;
     }
 
-    public void setTotalVotosEmBranco(int totalVotosEmBranco) {
+    public void setTotalVotosEmBranco(double totalVotosEmBranco) {
         this.totalVotosEmBranco = totalVotosEmBranco;
     }
 }

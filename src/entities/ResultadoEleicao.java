@@ -85,8 +85,7 @@ public class ResultadoEleicao {
 
                     comparacaoEntreVotosDoisETres();
                 }
-            }
-            if (candidato.getVotos2() == maiorVotacao) {
+            }else if (candidato.getVotos2() == maiorVotacao) {
                 System.out.println("Candidato vencedor: " +candidato.getCandidato2()+", com "+candidato.getVotos2()+" votos!");
 
                 if (candidato.getVotos1() >= candidato.getVotos3() && candidato.getVotos1() >= candidato.getVotos4()){
@@ -102,8 +101,7 @@ public class ResultadoEleicao {
 
                     comparacaoEntreVotosUmETres();
                 }
-            }
-            if (candidato.getVotos3() == maiorVotacao) {
+            }else if (candidato.getVotos3() == maiorVotacao) {
                 System.out.println("Candidato vencedor: " +candidato.getCandidato3()+", com "+candidato.getVotos3()+" votos!");
 
                 if (candidato.getVotos1() >= candidato.getVotos2() && candidato.getVotos1() >= candidato.getVotos4()){
@@ -119,8 +117,7 @@ public class ResultadoEleicao {
 
                     comparacaoEntreVotosUmEDois();
                 }
-            }
-            if (candidato.getVotos4() == maiorVotacao) {
+            }else if (candidato.getVotos4() == maiorVotacao) {
                 System.out.println("Candidato vencedor: " +candidato.getCandidato4()+", com "+candidato.getVotos4()+" votos!");
 
                 if (candidato.getVotos1() >= candidato.getVotos2() && candidato.getVotos1() >= candidato.getVotos3()){

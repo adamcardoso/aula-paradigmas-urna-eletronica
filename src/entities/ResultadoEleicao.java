@@ -138,7 +138,7 @@ public class ResultadoEleicao {
 
         System.out.println("\nTotal de votos nulos: "+candidato.getVotosNulo());
         System.out.println("Total de votos em branco: "+candidato.getVotosEmBranco());
-        System.out.printf("Porcentagem de votos em branco: %.2f",calculaPorcentagemDeVotosEmBranco());
+        System.out.printf("Porcentagem de votos em branco: %.2f%%",calculaPorcentagemDeVotosEmBranco());
     }
 
     private void mensagemCandidatosEmpatados() {
